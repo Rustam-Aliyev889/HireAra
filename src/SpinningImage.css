@@ -1,0 +1,43 @@
+.spinning-image {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    }
+    
+    .rotate {
+      height: 40vmin;
+      animation-duration: 4s; 
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    
+    .clockwise {
+      animation-name: spinClockwise;
+    }
+    
+    .counterclockwise {
+      animation-name: spinCounterclockwise;
+    }
+    
+    @keyframes spinClockwise {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes spinCounterclockwise {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }  
