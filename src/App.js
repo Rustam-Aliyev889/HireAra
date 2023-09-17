@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import React from 'react';
 import SpinningImage from './SpinningImage';
+import MouseTracker from './timer';
 
 function App() {
   return (
     <div className="App">
-      <SpinningImage />
+      <SpinningImage/>
     </div>
   );
 }

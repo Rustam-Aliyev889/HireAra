@@ -41,3 +41,10 @@
         transform: rotate(-360deg);
       }
     }  
+
+
+    .timer {
+        text-align: center;
+        font-style: italic;
+        font-weight: 500;
+    }
