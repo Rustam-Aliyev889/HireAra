@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SpinningImage from './SpinningImage';
 
 class MouseTracker extends Component {
   state = {
@@ -24,7 +23,13 @@ class MouseTracker extends Component {
       this.stopTimer();
     }
   };
-  
+
+  handleMouseMove = () => {
+    // Restarts the timer when the mouse moves
+    if (this.state.isMouseOver) {
+      this.restartTimer();
+    }
+  };
 
   startTimer() {
     this.setState({
@@ -35,6 +40,12 @@ class MouseTracker extends Component {
   stopTimer() {
     clearInterval(this.state.timer);
     this.setState({ timer: null });
+  }
+
+  restartTimer() {
+    this.stopTimer();
+    this.setState({ elapsedTime: 0 });
+    this.startTimer();
   }
 
   updateTimer = () => {
@@ -49,9 +60,11 @@ class MouseTracker extends Component {
 
   render() {
     return (
-      <div className='timer'
+      <div
+        className='timer'
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
+        onMouseMove={this.handleMouseMove} 
       >
         {this.props.children}
         <p>Mouse is over for: {this.state.elapsedTime} seconds</p>
@@ -61,3 +74,4 @@ class MouseTracker extends Component {
 }
 
 export default MouseTracker;
+
