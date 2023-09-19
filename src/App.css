@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+/* Sidebar */
+.sidebar-toggle {
+  position: fixed;
+  width: 40px;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  color: #282c34;
+  z-index: 999;
+  background-color: #4fc7e6;
+  border: none;
+  padding: 10px;
+  border-radius: 10%;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background-color: #282c34;
+  color:#61dafb;
+}
+
+

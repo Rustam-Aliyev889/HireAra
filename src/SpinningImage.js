@@ -7,11 +7,28 @@ const SpinningImage = () => {
   const [rotateClockwise, setRotateClockwise] = useState(true);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [imageSize, setImageSize] = useState({ width: 200, height: 200 }); // Initial size
+  const [isSpinning, setIsSpinning] = useState(true);
 
   const handleImageClick = () => {
     // Reverse the rotation direction
     setRotateClockwise(!rotateClockwise);
   };
+
+  const toggleSpin = () => {
+    setIsSpinning(!isSpinning);
+  };
+
+  // You can add or remove the 'rotate' class based on the 'isSpinning' state
+  React.useEffect(() => {
+    const imgElement = document.querySelector('.spinning-image img');
+    if (imgElement) {
+      if (isSpinning) {
+        imgElement.classList.add('rotate');
+      } else {
+        imgElement.classList.remove('rotate');
+      }
+    }
+  }, [isSpinning]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -48,6 +65,11 @@ const SpinningImage = () => {
           onClick={handleImageClick}
         />
       </MouseTracker>
+      <div>
+        <button onClick={toggleSpin}>
+          {isSpinning ? 'Stop Spinning' : 'Start Spinning'}
+        </button>
+      </div>
     </div>
   );
 };

@@ -48,3 +48,40 @@
         font-style: italic;
         font-weight: 500;
     }
+
+
+/* Sidebar */
+.sidebar {
+  width: 200px; 
+  height: 100%; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #333;
+  color: #4fc7e6;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+    
+button {
+  position: relative;
+  cursor: pointer;
+  color: #282c34;
+  font-weight: 500;
+  z-index: 999;
+  background-color: #4fc7e6;
+  border: none;
+  padding: 10px;
+  border-radius: 6%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #282c34;
+  color:#61dafb;
+}
