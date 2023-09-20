@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class MouseTracker extends Component {
   state = {
-    isMouseOver: false,
-    timer: null,
-    elapsedTime: 0,
+    isMouseOver: false, // tracks whether the mouse pointer is currently over the element
+    timer: null, //  stores the ID of the interval timer used to update the elapsed time
+    elapsedTime: 0, // stores the elapsed time in seconds while the mouse is over the element
   };
 
+  // starts the timer to update elapsedTime by a second
   handleMouseEnter = () => {
     this.setState({ isMouseOver: true });
     if (!this.state.timer) {
@@ -14,6 +15,7 @@ class MouseTracker extends Component {
     }
   };
 
+  // when the mouse pointer leaves the element, resets elapsedTime to 0, and stops the timer
   handleMouseLeave = () => {
     if (this.state.isMouseOver) {
       this.setState({
@@ -37,11 +39,13 @@ class MouseTracker extends Component {
     });
   }
 
+  //  sets timer to null
   stopTimer() {
     clearInterval(this.state.timer);
     this.setState({ timer: null });
   }
 
+  //  resets elapsedTime to 0, and starts a new timer
   restartTimer() {
     this.stopTimer();
     this.setState({ elapsedTime: 0 });
@@ -67,7 +71,7 @@ class MouseTracker extends Component {
         onMouseMove={this.handleMouseMove} 
       >
         {this.props.children}
-        <p>Mouse is over for: {this.state.elapsedTime} seconds</p>
+        <p>You have been hypnotized for: {this.state.elapsedTime} seconds</p>
       </div>
     );
   }

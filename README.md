@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+<h2 align="center"><img src="./src/Screenshot%20(54).png"></h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 1 Change the code so that the rotation direction of the react icon reverses each time the user clicks it.<br><br>
 
-## Available Scripts
+## To achieve this I decided to modify the standard icon from react app. As you can see in my SpinningImage.js file I used UseState to define the state variable RotateClockwise with initial value. HandleImageClick function is used to change rotation direction. ClassName attribute applies css classes for the image based on the components state. Animation for this is contained in SpinningImage.css.<br><br>
 
-In the project directory, you can run:
+# 2 Change the code to adjust the size of the react icon depending on the position of the cursor on the page.<br><br>
 
-### `npm start`
+## Since the image is constantly spinning I decided that the size of it  must match the dynamic style of the image. Plus it sort of keeps you engaged with the page as you have more size options to choose from furthermore it's more interactive.  UseState was used to declare the variables such as: CursorPosition and ImageSize to set up an initial size of the image and track the cursor. UseEffect was used to update cursor position, calculate the image size based on cursor position and update it. To trigger it event listener was added.<br><br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 3 Change the code so that the text under the icon displays the amount of time the mouse has been within the visible page, but NOT moving.<br><br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## To achieve this I've built additional component which uses event listeners to check mouse enter, mouse leave and mouse move to update elapsed time. Name of the functions are self-explanatory. I also provided additional comments to explain it better. The timer starts when mouse pointer enters the field and only when not moving it also refreshes itself if you moved cursor and starts again if your cursor holds still. Icon component placed inside timer component to combine them. <br><br>
 
-### `npm test`
+# 4 Add a sidebar that can be shown/hidden where any of the previous changes can be switched on or off.<br><br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## I've created a sidebar which can be shown or hidden with help of hamburger menu button. However since everything is constantly dynamic and reverses/updates itself to original state there is nothing to reverse so I simply created a button to refresh the page which is almost the same ;-). I didn't want you to to think i cheated so i decided to develop an extra button which stops and starts spinning of the image. 

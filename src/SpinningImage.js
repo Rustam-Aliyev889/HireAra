@@ -19,7 +19,7 @@ const SpinningImage = () => {
   };
 
   // You can add or remove the 'rotate' class based on the 'isSpinning' state
-  React.useEffect(() => {
+  useEffect(() => {
     const imgElement = document.querySelector('.spinning-image img');
     if (imgElement) {
       if (isSpinning) {
@@ -37,8 +37,8 @@ const SpinningImage = () => {
 
       // Calculating new image size based on cursor position
       const newSize = {
-        width: 200 + e.clientX / 5, 
-        height: 200 + e.clientY / 5,
+        width: 200 + e.clientX / 5, // Change to adjust the size of the icon
+        height: 200 + e.clientY / 5, // Change to adjust the size of the icon
       };
 
       setImageSize(newSize);
