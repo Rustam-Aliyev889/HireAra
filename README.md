@@ -1,4 +1,4 @@
-<h2 align="center"><img src="./src/Screenshot%20(54).png"></h2>
+<h2 align="center"><img src="./src/Screenshot%20(55).png"></h2>
 
 # 1 Change the code so that the rotation direction of the react icon reverses each time the user clicks it.<br><br>
 
